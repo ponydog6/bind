@@ -1,0 +1,23 @@
+
+services:
+    c001:
+        image: cloud/bind:1
+        ports:
+            - target: 53
+              published: 53
+              protocol: tcp
+              mode: host
+            - target: 53
+              published: 53
+              protocol: udp
+              mode: host
+        volumes:
+            - /home/user/secrets/bind001:/home/user/secrets:ro
+        tmpfs:
+            - /mnt
+        deploy:
+            placement:
+                constraints:
+                    - node.hostname == prd-hs-host001.homelab6.com
+            restart_policy:
+                condition: none
