@@ -1,0 +1,30 @@
+$TTL 8h
+
+$ORIGIN homelab6.com.
+
+@ IN SOA ns1.homelab6.com. developer.homelab6.com. (
+                          2025071618 ; serial number
+                          1d         ; refresh period
+                          3h         ; retry period
+                          3d         ; expire time
+                          3h         ; minimum TTL
+                        )
+
+                          IN NS   ns1.homelab6.com.
+ns1                       IN A    10.0.0.247
+prd-hs-host001            IN A    10.0.0.247
+
+router                    IN A    10.0.0.1
+
+prd-hs-launchpad001       IN A    10.0.0.175
+
+prd-hs-compute001         IN A    10.0.0.38
+prd-hs-compute001-bmc     IN A    10.0.0.41
+
+prd-vm-ansible001         IN A    10.0.0.162
+prd-vm-dockeradmin001     IN A    10.0.0.89
+prd-vm-dockeradmin002     IN A    10.0.0.3
+prd-vm-dockeradmin003     IN A    10.0.0.196
+prd-vm-shield001          IN A    10.0.0.97
+
+prd-vm-checkupdate001     IN A    10.0.0.152
